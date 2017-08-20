@@ -6,24 +6,23 @@ Python 3.6.2
 
 
 # Installation Instructions (Mac)
-- install python 3 if not installed - brew install python3
-- install virtualenv if not installed yet - sudo pip install virtualenv
-- create virtual environment using python3 (virtualenv -p python3 <venvname>)
-- source <venvname>/bin/activate
-- git clone git@github.com:ahsan-codejit/devicehealth.git
-- cd devicehealth
-- pip install -r devicehealth/requirement.txt
-- python manage.py makemigrations reports
-- python manage.py migrate
-- python manage.py runserver
-- browse http://127.0.0.1:8000
+- install python 3 if not installed - ```brew install python3```
+- install virtualenv if not installed yet - ```sudo pip install virtualenv```
+- create virtual environment using python3 - ```virtualenv -p python3 <venvname>```
+- activate ```source <venvname>/bin/activate```
+- ```git clone git@github.com:ahsan-codejit/devicehealth.git```
+- ```cd devicehealth```
+- ```pip install -r devicehealth/requirement.txt```
+- ```python manage.py makemigrations reports```
+- ```python manage.py migrate```
 
-# settings to run importcsv periodically (Mac)
+## Import csv reports
+### settings to run importcsv periodically (Mac)
 - Install rabbitmq server and run (if needed)
   - run ```brew install rabbitmq ```
-  - add export PATH=$PATH:/usr/local/sbin to your .bash_profile
-  - to run server 'rabbitmq-server'
-  - to stop 'rabbitmqctl stop', to look status 'rabbitmqctl status'
+  - add 'export PATH=$PATH:/usr/local/sbin' to your .bash_profile
+  - to run server ```rabbitmq-server```
+  - to stop ```rabbitmqctl stop```, to look status ```rabbitmqctl status```
 - Install Celery - 'pip install celery'
 - Run beat/scheduler (celery -A ports beat --loglevel=info) in a window
 - Run worker (celery -A reports worker -l info) in another window
@@ -32,14 +31,16 @@ Notes: We can setup demeonization for celery to run in background after dev
 
 ------------------ OR --------------------
 
-# importing reports into sqlite manually
+### importing reports into sqlite manually
 - run importcsv script
-  - python manage.py shell
-  - from reports.tasks import *
+  - ```python manage.py shell```
+  - ```from reports.tasks import *```
   - importcsv()
   - ctrl+D to exit
-- run python manage.py runserver 
-- visit http://127.0.0.1:8000
+
+#Run Project
+- ```python manage.py runserver```
+- browse http://127.0.0.1:8000
 
 # Short notes on tasks
 ## Part1 (import reports)
