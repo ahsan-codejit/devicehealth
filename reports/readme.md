@@ -20,10 +20,10 @@ Python 3.6.2
 
 # settings to run importcsv periodically (Mac)
 - Install rabbitmq server and run (if needed)
--- brew install rabbitmq 
--- add export PATH=$PATH:/usr/local/sbin to your .bash_profile
--- to run server 'rabbitmq-server'
--- to stop 'rabbitmqctl stop', to look status 'rabbitmqctl status'
+  - run ```brew install rabbitmq ```
+  - add export PATH=$PATH:/usr/local/sbin to your .bash_profile
+  - to run server 'rabbitmq-server'
+  - to stop 'rabbitmqctl stop', to look status 'rabbitmqctl status'
 - Install Celery - 'pip install celery'
 - Run beat/scheduler (celery -A ports beat --loglevel=info) in a window
 - Run worker (celery -A reports worker -l info) in another window
@@ -34,18 +34,18 @@ Notes: We can setup demeonization for celery to run in background after dev
 
 # importing reports into sqlite manually
 - run importcsv script
--- python manage.py shell
--- from reports.tasks import *
--- importcsv()
--- ctrl+D to exit
+  - python manage.py shell
+  - from reports.tasks import *
+  - importcsv()
+  - ctrl+D to exit
 - run python manage.py runserver 
 - visit http://127.0.0.1:8000
 
 # Short notes on tasks
 ## Part1 (import reports)
 - importcsv in reports/tasks to import reports into database
--- it lists all .csv files and iterate the list to import into database
--- it create records from file into database if row/report is not already inserted into db
+  - it lists all .csv files and iterate the list to import into database
+  - it create records from file into database if row/report is not already inserted into db
 - to run this script periodic manner, we setup scheduler and worker using celery and rabbitmq
 - this script also can be run by manually in above mentioned way
 - We also can run this script aschync way from uploader method when file is uploaded if we add feature to upload reports file in this project
@@ -53,9 +53,9 @@ Notes: We can setup demeonization for celery to run in background after dev
 ## Part2 (views)
 ### View1
 - Percentage View
--- If occurrences of selected date and same day of last week of the selected date are same, it will show progress as 0.0%
--- If occurence of same day of last week of the selected date is 0 or null, it will also show 0.0%
--- Formula to make percentage, here, is ((current-previous)/previous)*100
+  - If occurrences of selected date and same day of last week of the selected date are same, it will show progress as 0.0%
+  - If occurence of same day of last week of the selected date is 0 or null, it will also show 0.0%
+  - Formula to make percentage, here, is ((current-previous)/previous)*100
 
 ### View2
 
