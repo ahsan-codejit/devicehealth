@@ -10,7 +10,8 @@ Python 3.6.2
 - git clone git@github.com:ahsan-codejit/devicehealth.git
 - cd devicehealth
 - pip install -r devicehealth/requirement.txt
-- python manage.py migration
+- python manage.py makemigrations reports
+- python manage.py migrate
 - python manage.py runserver
 - browse http://127.0.0.1:8000
 
