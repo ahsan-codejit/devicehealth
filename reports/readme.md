@@ -27,7 +27,7 @@ Python 3.6.2
 - Run beat/scheduler (celery -A ports beat --loglevel=info) in a window
 - Run worker (celery -A reports worker -l info) in another window
 
-Notes: We can setup demeonization for celery to run in background after dev
+Notes: We can setup demeonization for celery to run in background later
 
 ------------------ OR --------------------
 
