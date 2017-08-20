@@ -51,7 +51,7 @@ Notes: We can setup demeonization for celery to run in background later
 - this script also can be run by manually in above mentioned way
 - We also can run this script aschync way from uploader method when file is uploaded if we add feature to upload reports file in this project
 
-## Part2 (views)
+## Part2 (views) (bootstrp sb-admin2 theme is used)
 ### View1
 - Percentage View
   - If occurrences of selected date and same day of last week of the selected date are same, it will show progress as 0.0%
