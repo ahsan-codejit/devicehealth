@@ -14,13 +14,15 @@ Python 3.6.2
 - python manage.py runserver
 - browse http://127.0.0.1:8000
 
-# manually reporting reports into sqlite
-- run importcsv script
-
 # settings to run importcsv periodically
 - Install rabbitmq server and run
 - Install Celery
 - Run beat (celery -A ports beat --loglevel=info)
 - Run worker (celery -A reports worker -l info)
+
+------------------ OR --------------------
+
+# manually importing reports into sqlite
+- run importcsv script
 
 # Enjoy the reports :)
