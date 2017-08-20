@@ -4,7 +4,7 @@ A simple reporter based on django, sqlite, celery, reabbitmq to report device he
 # Requirements:
 Python 3.6.2
 
-#Installation Instructions
+# Installation Instructions
 - create virtual environment using python3 (virtualenv -p python3 <venvname>)
 - source <venvname>/bin/activate
 - git clone git@github.com:ahsan-codejit/devicehealth.git
