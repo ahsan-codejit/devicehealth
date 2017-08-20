@@ -36,4 +36,4 @@ def get_change_percentage(current, previous):
     try:
        return round((abs(current - previous)/previous)*100.0, 2)
     except ZeroDivisionError:
-        return 100.0
+    	return 0.0

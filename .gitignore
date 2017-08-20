@@ -3,4 +3,6 @@ static/bower_components
 .DS_Store
 */migrations
 db.sqlite3
-*/__pycache__
+*/__pycache__/*
+celerybeat-schedule
+celerybeat.pid
